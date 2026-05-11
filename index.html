@@ -1,208 +1,248 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RaiseHand</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RaiseHand</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7efe2;
-      color: #1f2933;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7efe2;
+    color: #1f2933;
+  }
 
+  .container {
+    max-width: 950px;
+    margin: auto;
+    padding: 26px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .logo {
+    width: 58px;
+    height: 58px;
+    background: #ffd75e;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    font-size: 31px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  }
+
+  .brand h2 {
+    font-size: 34px;
+    margin: 0;
+  }
+
+  select {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 14px;
+    border: 1px solid #e3d4c0;
+    margin-bottom: 24px;
+    background: white;
+  }
+
+  .card {
+    background: white;
+    padding: 32px;
+    border-radius: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 16px 38px rgba(0,0,0,0.08);
+  }
+
+  .pill {
+    display: inline-block;
+    background: #fff4cf;
+    color: #805300;
+    border: 1px solid #f0d27a;
+    padding: 9px 14px;
+    border-radius: 999px;
+    font-weight: bold;
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-size: clamp(42px, 7vw, 68px);
+    line-height: 1;
+    margin: 0 0 18px;
+    letter-spacing: -2px;
+  }
+
+  h2 {
+    font-size: 32px;
+    margin-top: 0;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 1.55;
+    color: #5f6b7a;
+  }
+
+  label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 15px;
+    border: 1px solid #e3d4c0;
+    margin-bottom: 20px;
+  }
+
+  textarea {
+    min-height: 95px;
+  }
+
+  button {
+    background: #1f2933;
+    color: white;
+    border: none;
+    padding: 14px 18px;
+    border-radius: 15px;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 6px 8px 6px 0;
+    cursor: pointer;
+  }
+
+  button.secondary {
+    background: #fff4cf;
+    color: #805300;
+    border: 1px solid #f0d27a;
+  }
+
+  .chat {
+    background: #fbf7ef;
+    border: 1px solid #e3d4c0;
+    border-radius: 20px;
+    padding: 16px;
+    min-height: 280px;
+    max-height: 430px;
+    overflow-y: auto;
+    margin: 20px 0;
+  }
+
+  .msg {
+    padding: 13px 15px;
+    border-radius: 15px;
+    margin: 10px 0;
+    font-size: 18px;
+    line-height: 1.45;
+    white-space: pre-wrap;
+  }
+
+  .ai {
+    background: white;
+    border: 1px solid #e3d4c0;
+  }
+
+  .student {
+    background: #1f2933;
+    color: white;
+    margin-left: 45px;
+  }
+
+  .coach {
+    background: #fff4cf;
+    color: #805300;
+    border: 1px solid #f0d27a;
+  }
+
+  .note {
+    font-size: 16px;
+    color: #6b7280;
+  }
+
+  @media (max-width: 700px) {
     .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 25px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 20px;
-    }
-
-    .logo {
-      background: #ffd75e;
-      padding: 16px;
-      border-radius: 18px;
-      font-size: 30px;
-    }
-
-    h1 {
-      font-size: 52px;
-      line-height: 1;
-      margin: 10px 0;
-    }
-
-    h2 {
-      font-size: 30px;
-      margin-top: 0;
-    }
-
-    p {
-      font-size: 20px;
-      line-height: 1.5;
-      color: #5f6b7a;
+      padding: 18px;
     }
 
     .card {
-      background: white;
-      padding: 28px;
-      border-radius: 28px;
-      margin: 22px 0;
-      box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+      padding: 24px;
     }
 
-    select, input, textarea {
-      width: 100%;
-      padding: 15px;
-      font-size: 18px;
-      border-radius: 14px;
-      border: 1px solid #e4d6c4;
-      margin: 8px 0 18px;
-      box-sizing: border-box;
+    h1 {
+      font-size: 42px;
     }
-
-    textarea {
-      min-height: 90px;
-    }
-
-    button {
-      background: #1f2933;
-      color: white;
-      border: none;
-      padding: 14px 18px;
-      border-radius: 15px;
-      font-size: 17px;
-      font-weight: bold;
-      margin: 6px 6px 6px 0;
-      cursor: pointer;
-    }
-
-    button.secondary {
-      background: #fff4cf;
-      color: #805300;
-      border: 1px solid #f0d27a;
-    }
-
-    label {
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .pill {
-      display: inline-block;
-      background: #fff4cf;
-      color: #805300;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-weight: bold;
-      margin-bottom: 14px;
-    }
-
-    .chat {
-      background: #fbf7ef;
-      border: 1px solid #e4d6c4;
-      border-radius: 20px;
-      padding: 15px;
-      min-height: 260px;
-      max-height: 420px;
-      overflow-y: auto;
-    }
-
-    .msg {
-      padding: 13px;
-      border-radius: 15px;
-      margin: 10px 0;
-      font-size: 18px;
-      line-height: 1.4;
-      white-space: pre-wrap;
-    }
-
-    .ai {
-      background: white;
-      border: 1px solid #e4d6c4;
-    }
-
-    .student {
-      background: #1f2933;
-      color: white;
-      margin-left: 40px;
-    }
-
-    .coach {
-      background: #fff4cf;
-      border: 1px solid #f0d27a;
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <div class="brand">
-      <div class="logo">✋</div>
-      <h2>RaiseHand</h2>
-    </div>
-
-    <select id="language" onchange="changeLanguage()">
-      <option value="en">English</option>
-      <option value="hi">हिंदी</option>
-    </select>
-
-    <div class="card">
-      <div class="pill" id="eyebrow">Algebra confidence prototype</div>
-      <h1 id="title">Practice quietly. Speak confidently.</h1>
-      <p id="subtitle">
-        RaiseHand helps a student practice algebra without being handed the answer. It gives hints, asks for teach-back, and rehearses the moment of raising a hand in class.
-      </p>
-      <button id="tryBtn" onclick="document.getElementById('demo').scrollIntoView()">Try the demo</button>
-      <button class="secondary" id="exampleBtn" onclick="loadExample()">Use example: solve for x</button>
-    </div>
-
-    <div class="card">
-      <h2 id="whatTitle">What this is doing</h2>
-      <p id="whatBody">
-        This is not an answer machine. It is a confidence bridge. The student practices thinking first, then practices saying the answer clearly.
-      </p>
-      <p id="steps">
-        1. Start with fear: name what feels confusing.<br>
-        2. Hints before answers: guide thinking without solving everything.<br>
-        3. Teach it back: explain the concept in your own words.<br>
-        4. Raise-hand rehearsal: practice what you would say in class.
-      </p>
-    </div>
-
-    <div class="card" id="demo">
-      <h2 id="practiceTitle">Algebra practice room</h2>
-
-      <label id="topicLabel">Algebra topic</label>
-      <input id="topic" placeholder="Example: solving 2x + 3 = 11">
-
-      <label id="stuckLabel">What feels hard?</label>
-      <textarea id="stuck" placeholder="Example: I don’t know what to do first."></textarea>
-
-      <label id="confidenceLabel">How ready do you feel to answer in class?</label>
-      <input type="range" min="1" max="10" value="4" id="confidence">
-
-      <button id="beginBtn" onclick="beginPractice()">Begin confidence practice</button>
-
-      <div class="chat" id="chat"></div>
-
-      <button class="secondary" id="hintBtn" onclick="giveHint()">Give me a hint</button>
-      <button class="secondary" id="teachBtn" onclick="teachBack()">I want to teach it back</button>
-      <button class="secondary" id="raiseBtn" onclick="raiseHand()">Practice raising my hand</button>
-
-      <input id="reply" placeholder="Type what you would say...">
-      <button id="sendBtn" onclick="sendReply()">Send</button>
-    </div>
-
+  <div class="brand">
+    <div class="logo">✋</div>
+    <h2>RaiseHand</h2>
   </div>
+
+  <select id="language" onchange="changeLanguage()">
+    <option value="en">English</option>
+    <option value="hi">हिंदी</option>
+  </select>
+
+  <div class="card">
+    <div class="pill" id="eyebrow"></div>
+    <h1 id="title"></h1>
+    <p id="subtitle"></p>
+    <button id="tryBtn" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})"></button>
+    <button class="secondary" id="exampleBtn" onclick="loadExample()"></button>
+  </div>
+
+  <div class="card">
+    <h2 id="whatTitle"></h2>
+    <p id="whatBody"></p>
+    <p id="steps"></p>
+  </div>
+
+  <div class="card" id="demo">
+    <h2 id="practiceTitle"></h2>
+    <p id="practiceSub"></p>
+
+    <label id="topicLabel"></label>
+    <input id="topic" />
+
+    <label id="stuckLabel"></label>
+    <textarea id="stuck"></textarea>
+
+    <label id="confidenceLabel"></label>
+    <input type="range" min="1" max="10" value="4" id="confidence" />
+    <p><strong id="confidenceValue">4/10</strong></p>
+
+    <button id="beginBtn" onclick="beginPractice()"></button>
+
+    <div class="chat" id="chat"></div>
+
+    <button class="secondary" id="hintBtn" onclick="giveHint()"></button>
+    <button class="secondary" id="teachBtn" onclick="teachBack()"></button>
+    <button class="secondary" id="raiseBtn" onclick="raiseHand()"></button>
+
+    <input id="reply" />
+    <button id="sendBtn" onclick="sendReply()"></button>
+
+    <p class="note" id="note"></p>
+  </div>
+
+</div>
 
 <script>
 let lang = "en";
@@ -211,63 +251,99 @@ const content = {
   en: {
     eyebrow: "Algebra confidence prototype",
     title: "Practice quietly. Speak confidently.",
-    subtitle: "RaiseHand helps a student practice algebra without being handed the answer. It gives hints, asks for teach-back, and rehearses the moment of raising a hand in class.",
+    subtitle: "RaiseHand helps students practice algebra without simply being handed the answer. It gives hints, asks students to explain their thinking, and helps them rehearse the moment of raising a hand in class.",
     tryBtn: "Try the demo",
     exampleBtn: "Use example: solve for x",
+
     whatTitle: "What this is doing",
     whatBody: "This is not an answer machine. It is a confidence bridge. The student practices thinking first, then practices saying the answer clearly.",
-    steps: "1. Start with fear: name what feels confusing.<br>2. Hints before answers: guide thinking without solving everything.<br>3. Teach it back: explain the concept in your own words.<br>4. Raise-hand rehearsal: practice what you would say in class.",
+    steps:
+      "1. Start with hesitation: name what feels confusing.<br><br>" +
+      "2. Use hints before answers: guide the student without doing all the thinking for them.<br><br>" +
+      "3. Teach it back: ask the student to explain the idea in their own words.<br><br>" +
+      "4. Rehearse raising a hand: help the student practice what they would say in class.",
+
     practiceTitle: "Algebra practice room",
+    practiceSub: "The goal is not speed. The goal is confidence without copying.",
     topicLabel: "Algebra topic",
     stuckLabel: "What feels hard?",
     confidenceLabel: "How ready do you feel to answer in class?",
     beginBtn: "Begin confidence practice",
     hintBtn: "Give me a hint",
-    teachBtn: "I want to teach it back",
+    teachBtn: "I want to explain it back",
     raiseBtn: "Practice raising my hand",
     sendBtn: "Send",
-    welcome: "Hi. I’m here to help you practice algebra safely. I won’t just give you the answer. We’ll build it together, then practice how you would say it in class.",
+    note: "Prototype note: A real version should protect student privacy, reduce dependency, and keep teachers or parents involved when appropriate.",
+
     topicPlaceholder: "Example: solving 2x + 3 = 11",
     stuckPlaceholder: "Example: I don’t know what to do first.",
-    replyPlaceholder: "Type what you would say...",
+    replyPlaceholder: "Type what you would say in class.",
+
+    welcome: "Hi. I’m here to help you practice algebra safely. I will not just give you the answer. We will build the thinking together, then practice how you could say it in class.",
+
     exampleTopic: "Solving 2x + 3 = 11",
-    exampleStuck: "I know x is unknown, but I feel nervous about what step comes first.",
-    beginMsg: "Good. We will go slowly. First, do not jump to the final answer. Ask yourself: what is happening to x? Then we undo those steps in reverse order. What should we undo first?",
-    hintMsg: "Hint: In 2x + 3 = 11, 3 is being added after 2x. To isolate x, what can we do to both sides first?",
-    teachMsg: "Teach-back time. Finish this sentence: To solve 2x + 3 = 11, first I would ___ because ___.",
-    raiseMsg: "Raise-hand rehearsal: Your teacher asks, “What is the first step?” Type a short answer you could say out loud.",
-    feedback: "That is a strong start. A classroom-ready version could be: First, subtract 3 from both sides because we want to undo the +3 and keep the equation balanced. That is worth raising your hand for."
+    exampleStuck: "I know x is the unknown number, but I feel nervous about what step comes first.",
+
+    beginMsg: "Good. Let’s go slowly.\n\nDo not jump to the final answer yet. First ask yourself: what is happening to x?\n\nIn 2x + 3 = 11, x is multiplied by 2 and then 3 is added. To solve it, we undo those steps in reverse order.\n\nWhat should we undo first?",
+
+    hintMsg: "Hint:\n\nThe equation is 2x + 3 = 11.\n\nThe +3 is outside the 2x. So the first move is usually to undo the +3.\n\nWhat can we do to both sides of the equation?",
+
+    teachMsg: "Now explain it back.\n\nComplete this sentence:\n\n“To solve 2x + 3 = 11, first I would ______ because ______.”",
+
+    raiseMsg: "Raise-hand rehearsal:\n\nImagine your teacher asks, “What is the first step in solving 2x + 3 = 11?”\n\nWrite one short answer you could say out loud.",
+
+    empty: "Write even a small thought. It does not have to be perfect. Confidence grows by trying.",
+
+    feedback: "That is a strong start.\n\nA clear classroom answer could be:\n\n“First, I would subtract 3 from both sides because we need to undo the +3 and keep the equation balanced.”\n\nThat is the kind of answer you can raise your hand for."
   },
 
   hi: {
-    eyebrow: "Algebra confidence prototype",
-    title: "चुपचाप practice करो. फिर confidence से बोलो.",
-    subtitle: "RaiseHand बच्चे को algebra practice करने में मदद करता है, लेकिन सीधा answer नहीं देता. यह hints देता है, बच्चे से अपने शब्दों में समझाने को कहता है, और class में हाथ उठाकर बोलने की rehearsal करवाता है.",
-    tryBtn: "Demo try करें",
-    exampleBtn: "Example use करें: x solve करना",
-    whatTitle: "यह app क्या कर रहा है",
-    whatBody: "यह answer देने वाली machine नहीं है. यह confidence bridge है. बच्चा पहले सोचने की practice करता है, फिर साफ़ बोलने की practice करता है.",
-    steps: "1. पहले डर को नाम दो: बताओ क्या confusing लग रहा है.<br>2. Answer से पहले hints: app पूरा solve नहीं करता, सोचने में guide करता है.<br>3. खुद समझाकर बताओ: concept को अपने शब्दों में explain करो.<br>4. हाथ उठाने की rehearsal: class में क्या बोलोगे, उसकी practice करो.",
-    practiceTitle: "Algebra practice room",
-    topicLabel: "Algebra topic",
-    stuckLabel: "कहाँ अटक रहे हो?",
-    confidenceLabel: "Class में answer देने के लिए अभी कितना ready feel कर रहे हो?",
-    beginBtn: "Confidence practice शुरू करें",
-    hintBtn: "मुझे hint दो",
-    teachBtn: "मैं समझाकर बताना चाहता/चाहती हूँ",
-    raiseBtn: "हाथ उठाने की practice",
-    sendBtn: "Send",
-    welcome: "Hi. मैं तुम्हें algebra safely practice करवाऊँगा. मैं बस answer नहीं दूँगा. हम साथ में सोचेंगे, फिर practice करेंगे कि class में इसे कैसे बोलना है.",
-    topicPlaceholder: "Example: 2x + 3 = 11 solve करना",
-    stuckPlaceholder: "Example: मुझे समझ नहीं आता कि पहला step क्या करना है.",
-    replyPlaceholder: "जो तुम बोलना चाहते हो, यहाँ लिखो...",
-    exampleTopic: "2x + 3 = 11 solve करना",
-    exampleStuck: "मुझे पता है कि x unknown है, लेकिन मुझे डर लगता है कि पहला step क्या होना चाहिए.",
-    beginMsg: "Good. हम slowly चलेंगे. Final answer पर jump मत करो. पहले पूछो: x के साथ क्या हो रहा है? फिर हम steps को reverse order में undo करेंगे. तुम्हें क्या लगता है, पहले क्या undo करना चाहिए?",
-    hintMsg: "Hint: 2x + 3 = 11 में 2x के बाद 3 add हुआ है. x को अकेला करने के लिए दोनों sides से पहले क्या कर सकते हैं?",
-    teachMsg: "Teach-back time. यह sentence पूरा करो: 2x + 3 = 11 solve करने के लिए, पहले मैं ___ करूँगा/करूँगी क्योंकि ___.",
-    raiseMsg: "Raise-hand rehearsal: Teacher पूछते हैं, “पहला step क्या है?” एक छोटा answer लिखो जो तुम class में बोल सकते हो.",
-    feedback: "यह strong start है. Class-ready version हो सकता है: पहले दोनों sides से 3 subtract करेंगे, क्योंकि हमें +3 undo करना है और equation balanced रखनी है. यह हाथ उठाकर बोलने लायक answer है."
+    eyebrow: "बीजगणित आत्मविश्वास अभ्यास",
+    title: "शांत होकर अभ्यास करो. आत्मविश्वास से उत्तर दो.",
+    subtitle: "RaiseHand विद्यार्थियों को बीजगणित का अभ्यास करने में मदद करता है, लेकिन सीधे उत्तर नहीं देता। यह संकेत देता है, विद्यार्थी से अपनी सोच समझाने को कहता है, और कक्षा में हाथ उठाकर उत्तर देने का अभ्यास करवाता है।",
+    tryBtn: "डेमो आज़माएँ",
+    exampleBtn: "उदाहरण देखें: x का मान निकालना",
+
+    whatTitle: "यह क्या करता है",
+    whatBody: "यह केवल उत्तर बताने वाला साधन नहीं है। यह आत्मविश्वास बनाने वाला अभ्यास स्थान है। विद्यार्थी पहले सोचने का अभ्यास करता है, फिर उत्तर को स्पष्ट रूप से बोलने का अभ्यास करता है।",
+    steps:
+      "1. झिझक से शुरुआत: विद्यार्थी बताता है कि कौन-सा भाग कठिन लग रहा है।<br><br>" +
+      "2. उत्तर से पहले संकेत: विद्यार्थी की सोच को दिशा दी जाती है, पूरा काम उसके लिए नहीं किया जाता।<br><br>" +
+      "3. अपने शब्दों में समझाना: विद्यार्थी विचार को अपने तरीके से समझाता है।<br><br>" +
+      "4. हाथ उठाने का अभ्यास: विद्यार्थी यह अभ्यास करता है कि कक्षा में वह क्या कहेगा।",
+
+    practiceTitle: "बीजगणित अभ्यास कक्ष",
+    practiceSub: "लक्ष्य तेज़ी नहीं है। लक्ष्य है बिना नकल किए आत्मविश्वास बनाना।",
+    topicLabel: "बीजगणित विषय",
+    stuckLabel: "कौन-सा भाग कठिन लग रहा है?",
+    confidenceLabel: "कक्षा में उत्तर देने के लिए आप अभी कितने तैयार महसूस कर रहे हैं?",
+    beginBtn: "आत्मविश्वास अभ्यास शुरू करें",
+    hintBtn: "मुझे संकेत दें",
+    teachBtn: "मैं इसे समझाकर बताना चाहता/चाहती हूँ",
+    raiseBtn: "हाथ उठाकर उत्तर देने का अभ्यास",
+    sendBtn: "भेजें",
+    note: "प्रोटोटाइप नोट: वास्तविक संस्करण में विद्यार्थी की गोपनीयता सुरक्षित रखनी चाहिए, निर्भरता कम करनी चाहिए, और आवश्यकता होने पर शिक्षक या अभिभावक को शामिल रखना चाहिए।",
+
+    topicPlaceholder: "उदाहरण: 2x + 3 = 11 हल करना",
+    stuckPlaceholder: "उदाहरण: मुझे समझ नहीं आता कि पहला कदम क्या होना चाहिए।",
+    replyPlaceholder: "कक्षा में आप क्या कहेंगे, यहाँ लिखें।",
+
+    welcome: "नमस्ते। मैं आपको बीजगणित का सुरक्षित अभ्यास करवाने में मदद करूँगा। मैं सीधे उत्तर नहीं दूँगा। हम पहले सोच को साथ में बनाएँगे, फिर अभ्यास करेंगे कि कक्षा में इसे कैसे कहना है।",
+
+    exampleTopic: "2x + 3 = 11 हल करना",
+    exampleStuck: "मुझे पता है कि x अज्ञात संख्या है, लेकिन मुझे घबराहट होती है कि पहला कदम क्या होना चाहिए।",
+
+    beginMsg: "अच्छा। चलिए धीरे-धीरे शुरू करते हैं।\n\nअभी अंतिम उत्तर पर मत जाइए। पहले अपने आप से पूछिए: x के साथ क्या हो रहा है?\n\n2x + 3 = 11 में x को 2 से गुणा किया गया है और फिर 3 जोड़ा गया है। इसे हल करने के लिए हम इन कदमों को उल्टे क्रम में हटाते हैं।\n\nआपके अनुसार पहले क्या हटाना चाहिए?",
+
+    hintMsg: "संकेत:\n\nसमीकरण है 2x + 3 = 11।\n\nयहाँ +3, 2x के बाहर जुड़ा हुआ है। इसलिए पहला कदम आमतौर पर +3 को हटाना होता है।\n\nसमीकरण के दोनों पक्षों में हम क्या कर सकते हैं?",
+
+    teachMsg: "अब इसे अपने शब्दों में समझाइए।\n\nयह वाक्य पूरा कीजिए:\n\n“2x + 3 = 11 को हल करने के लिए, पहले मैं ______ करूँगा/करूँगी क्योंकि ______।”",
+
+    raiseMsg: "हाथ उठाने का अभ्यास:\n\nकल्पना कीजिए कि शिक्षक पूछते हैं, “2x + 3 = 11 को हल करने का पहला कदम क्या है?”\n\nएक छोटा उत्तर लिखिए, जिसे आप कक्षा में बोल सकते हैं।",
+
+    empty: "एक छोटा-सा विचार भी लिखिए। उसे बिल्कुल सही होना ज़रूरी नहीं है। आत्मविश्वास प्रयास करने से बनता है।",
+
+    feedback: "यह एक अच्छी शुरुआत है।\n\nकक्षा में बोलने योग्य स्पष्ट उत्तर हो सकता है:\n\n“पहले मैं दोनों पक्षों से 3 घटाऊँगा/घटाऊँगी, क्योंकि हमें +3 को हटाना है और समीकरण को संतुलित रखना है।”\n\nयह ऐसा उत्तर है जिसके लिए आप हाथ उठा सकते हैं।"
   }
 };
 
@@ -275,15 +351,20 @@ function changeLanguage() {
   lang = document.getElementById("language").value;
   const c = content[lang];
 
+  document.documentElement.lang = lang;
+
   document.getElementById("eyebrow").innerHTML = c.eyebrow;
   document.getElementById("title").innerHTML = c.title;
   document.getElementById("subtitle").innerHTML = c.subtitle;
   document.getElementById("tryBtn").innerHTML = c.tryBtn;
   document.getElementById("exampleBtn").innerHTML = c.exampleBtn;
+
   document.getElementById("whatTitle").innerHTML = c.whatTitle;
   document.getElementById("whatBody").innerHTML = c.whatBody;
   document.getElementById("steps").innerHTML = c.steps;
+
   document.getElementById("practiceTitle").innerHTML = c.practiceTitle;
+  document.getElementById("practiceSub").innerHTML = c.practiceSub;
   document.getElementById("topicLabel").innerHTML = c.topicLabel;
   document.getElementById("stuckLabel").innerHTML = c.stuckLabel;
   document.getElementById("confidenceLabel").innerHTML = c.confidenceLabel;
@@ -292,6 +373,7 @@ function changeLanguage() {
   document.getElementById("teachBtn").innerHTML = c.teachBtn;
   document.getElementById("raiseBtn").innerHTML = c.raiseBtn;
   document.getElementById("sendBtn").innerHTML = c.sendBtn;
+  document.getElementById("note").innerHTML = c.note;
 
   document.getElementById("topic").placeholder = c.topicPlaceholder;
   document.getElementById("stuck").placeholder = c.stuckPlaceholder;
@@ -311,15 +393,22 @@ function addMessage(type, text) {
 }
 
 function loadExample() {
-  document.getElementById("topic").value = content[lang].exampleTopic;
-  document.getElementById("stuck").value = content[lang].exampleStuck;
-  document.getElementById("demo").scrollIntoView();
+  const c = content[lang];
+  document.getElementById("topic").value = c.exampleTopic;
+  document.getElementById("stuck").value = c.exampleStuck;
+  document.getElementById("demo").scrollIntoView({behavior:"smooth"});
 }
 
 function beginPractice() {
-  const topic = document.getElementById("topic").value;
-  const stuck = document.getElementById("stuck").value;
-  addMessage("student", topic + "\\n" + stuck);
+  const topic = document.getElementById("topic").value.trim();
+  const stuck = document.getElementById("stuck").value.trim();
+
+  if (!topic && !stuck) {
+    addMessage("coach", content[lang].empty);
+    return;
+  }
+
+  addMessage("student", topic + "\n" + stuck);
   addMessage("ai", content[lang].beginMsg);
 }
 
@@ -336,12 +425,21 @@ function raiseHand() {
 }
 
 function sendReply() {
-  const reply = document.getElementById("reply").value;
-  if (!reply.trim()) return;
+  const reply = document.getElementById("reply").value.trim();
+
+  if (!reply) {
+    addMessage("coach", content[lang].empty);
+    return;
+  }
+
   addMessage("student", reply);
   document.getElementById("reply").value = "";
   addMessage("coach", content[lang].feedback);
 }
+
+document.getElementById("confidence").addEventListener("input", function() {
+  document.getElementById("confidenceValue").innerText = this.value + "/10";
+});
 
 changeLanguage();
 </script>
