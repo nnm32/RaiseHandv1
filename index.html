@@ -6,184 +6,176 @@
 <title>RaiseHand</title>
 
 <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f7efe2;
-    color: #1f2933;
-  }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7efe2;
+  color: #1f2933;
+}
 
-  .container {
-    max-width: 950px;
-    margin: auto;
-    padding: 26px;
-  }
+.container {
+  max-width: 950px;
+  margin: auto;
+  padding: 26px;
+}
 
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 22px;
-  }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
 
-  .logo {
-    width: 58px;
-    height: 58px;
-    background: #ffd75e;
-    border-radius: 18px;
-    display: grid;
-    place-items: center;
-    font-size: 31px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-  }
+.logo {
+  width: 58px;
+  height: 58px;
+  background: #ffd75e;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  font-size: 31px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
 
-  .brand h2 {
-    font-size: 34px;
-    margin: 0;
-  }
+.brand h2 {
+  font-size: 34px;
+  margin: 0;
+}
 
-  select {
-    width: 100%;
-    padding: 15px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 14px;
-    border: 1px solid #e3d4c0;
-    margin-bottom: 24px;
-    background: white;
-  }
+select {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 14px;
+  border: 1px solid #e3d4c0;
+  margin-bottom: 24px;
+  background: white;
+}
 
-  .card {
-    background: white;
-    padding: 32px;
-    border-radius: 28px;
-    margin-bottom: 24px;
-    box-shadow: 0 16px 38px rgba(0,0,0,0.08);
-  }
+.card {
+  background: white;
+  padding: 32px;
+  border-radius: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 16px 38px rgba(0,0,0,0.08);
+}
 
-  .pill {
-    display: inline-block;
-    background: #fff4cf;
-    color: #805300;
-    border: 1px solid #f0d27a;
-    padding: 9px 14px;
-    border-radius: 999px;
-    font-weight: bold;
-    margin-bottom: 18px;
-  }
+.pill {
+  display: inline-block;
+  background: #fff4cf;
+  color: #805300;
+  border: 1px solid #f0d27a;
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
 
-  h1 {
-    font-size: clamp(42px, 7vw, 68px);
-    line-height: 1;
-    margin: 0 0 18px;
-    letter-spacing: -2px;
-  }
+h1 {
+  font-size: clamp(42px, 7vw, 68px);
+  line-height: 1;
+  margin: 0 0 18px;
+  letter-spacing: -2px;
+}
 
-  h2 {
-    font-size: 32px;
-    margin-top: 0;
-  }
+h2 {
+  font-size: 32px;
+  margin-top: 0;
+}
 
-  p {
-    font-size: 20px;
-    line-height: 1.55;
-    color: #5f6b7a;
-  }
+p {
+  font-size: 20px;
+  line-height: 1.55;
+  color: #5f6b7a;
+}
 
-  label {
-    display: block;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
+label {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
 
-  input, textarea {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 15px;
-    font-size: 18px;
-    border-radius: 15px;
-    border: 1px solid #e3d4c0;
-    margin-bottom: 20px;
-  }
+input, textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 15px;
+  border: 1px solid #e3d4c0;
+  margin-bottom: 20px;
+}
 
-  textarea {
-    min-height: 95px;
-  }
+textarea {
+  min-height: 95px;
+}
 
-  button {
-    background: #1f2933;
-    color: white;
-    border: none;
-    padding: 14px 18px;
-    border-radius: 15px;
-    font-size: 17px;
-    font-weight: bold;
-    margin: 6px 8px 6px 0;
-    cursor: pointer;
-  }
+button {
+  background: #1f2933;
+  color: white;
+  border: none;
+  padding: 14px 18px;
+  border-radius: 15px;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 6px 8px 6px 0;
+  cursor: pointer;
+}
 
-  button.secondary {
-    background: #fff4cf;
-    color: #805300;
-    border: 1px solid #f0d27a;
-  }
+button.secondary {
+  background: #fff4cf;
+  color: #805300;
+  border: 1px solid #f0d27a;
+}
 
-  .chat {
-    background: #fbf7ef;
-    border: 1px solid #e3d4c0;
-    border-radius: 20px;
-    padding: 16px;
-    min-height: 280px;
-    max-height: 430px;
-    overflow-y: auto;
-    margin: 20px 0;
-  }
+.chat {
+  background: #fbf7ef;
+  border: 1px solid #e3d4c0;
+  border-radius: 20px;
+  padding: 16px;
+  min-height: 280px;
+  max-height: 430px;
+  overflow-y: auto;
+  margin: 20px 0;
+}
 
-  .msg {
-    padding: 13px 15px;
-    border-radius: 15px;
-    margin: 10px 0;
-    font-size: 18px;
-    line-height: 1.45;
-    white-space: pre-wrap;
-  }
+.msg {
+  padding: 13px 15px;
+  border-radius: 15px;
+  margin: 10px 0;
+  font-size: 18px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}
 
-  .ai {
-    background: white;
-    border: 1px solid #e3d4c0;
-  }
+.ai {
+  background: white;
+  border: 1px solid #e3d4c0;
+}
 
-  .student {
-    background: #1f2933;
-    color: white;
-    margin-left: 45px;
-  }
+.student {
+  background: #1f2933;
+  color: white;
+  margin-left: 45px;
+}
 
-  .coach {
-    background: #fff4cf;
-    color: #805300;
-    border: 1px solid #f0d27a;
-  }
+.coach {
+  background: #fff4cf;
+  color: #805300;
+  border: 1px solid #f0d27a;
+}
 
-  .note {
-    font-size: 16px;
-    color: #6b7280;
-  }
+.note {
+  font-size: 16px;
+  color: #6b7280;
+}
 
-  @media (max-width: 700px) {
-    .container {
-      padding: 18px;
-    }
-
-    .card {
-      padding: 24px;
-    }
-
-    h1 {
-      font-size: 42px;
-    }
-  }
+@media (max-width: 700px) {
+  .container { padding: 18px; }
+  .card { padding: 24px; }
+  h1 { font-size: 42px; }
+}
 </style>
 </head>
 
@@ -273,7 +265,7 @@ const content = {
     teachBtn: "I want to explain it back",
     raiseBtn: "Practice raising my hand",
     sendBtn: "Send",
-    note: "Prototype note: A real version should protect student privacy, reduce dependency, and keep teachers or parents involved when appropriate.",
+    note: "Prototype note: This demo is scripted to show the experience. A real version should protect student privacy, reduce dependency, and keep teachers or parents involved when appropriate.",
 
     topicPlaceholder: "Example: solving 2x + 3 = 11",
     stuckPlaceholder: "Example: I don’t know what to do first.",
@@ -299,8 +291,8 @@ const content = {
 
   hi: {
     eyebrow: "बीजगणित आत्मविश्वास अभ्यास",
-    title: "शांत होकर अभ्यास करो. आत्मविश्वास से उत्तर दो.",
-    subtitle: "RaiseHand विद्यार्थियों को बीजगणित का अभ्यास करने में मदद करता है, लेकिन सीधे उत्तर नहीं देता। यह संकेत देता है, विद्यार्थी से अपनी सोच समझाने को कहता है, और कक्षा में हाथ उठाकर उत्तर देने का अभ्यास करवाता है।",
+    title: "शांत होकर अभ्यास करें। आत्मविश्वास से उत्तर दें।",
+    subtitle: "RaiseHand विद्यार्थियों को बीजगणित का अभ्यास करने में मदद करता है, लेकिन सीधे उत्तर नहीं बताता। यह संकेत देता है, विद्यार्थी से अपनी सोच समझाने को कहता है, और कक्षा में हाथ उठाकर उत्तर देने का अभ्यास करवाता है।",
     tryBtn: "डेमो आज़माएँ",
     exampleBtn: "उदाहरण देखें: x का मान निकालना",
 
@@ -322,13 +314,13 @@ const content = {
     teachBtn: "मैं इसे समझाकर बताना चाहता/चाहती हूँ",
     raiseBtn: "हाथ उठाकर उत्तर देने का अभ्यास",
     sendBtn: "भेजें",
-    note: "प्रोटोटाइप नोट: वास्तविक संस्करण में विद्यार्थी की गोपनीयता सुरक्षित रखनी चाहिए, निर्भरता कम करनी चाहिए, और आवश्यकता होने पर शिक्षक या अभिभावक को शामिल रखना चाहिए।",
+    note: "प्रोटोटाइप नोट: यह डेमो अनुभव दिखाने के लिए बनाया गया है। वास्तविक संस्करण में विद्यार्थी की गोपनीयता सुरक्षित रखनी चाहिए, निर्भरता कम करनी चाहिए, और आवश्यकता होने पर शिक्षक या अभिभावक को शामिल रखना चाहिए।",
 
     topicPlaceholder: "उदाहरण: 2x + 3 = 11 हल करना",
     stuckPlaceholder: "उदाहरण: मुझे समझ नहीं आता कि पहला कदम क्या होना चाहिए।",
     replyPlaceholder: "कक्षा में आप क्या कहेंगे, यहाँ लिखें।",
 
-    welcome: "नमस्ते। मैं आपको बीजगणित का सुरक्षित अभ्यास करवाने में मदद करूँगा। मैं सीधे उत्तर नहीं दूँगा। हम पहले सोच को साथ में बनाएँगे, फिर अभ्यास करेंगे कि कक्षा में इसे कैसे कहना है।",
+    welcome: "नमस्ते। मैं आपको बीजगणित का सुरक्षित अभ्यास करवाने में मदद करूँगा। मैं सीधे उत्तर नहीं बताऊँगा। हम पहले सोच को साथ में समझेंगे, फिर अभ्यास करेंगे कि कक्षा में इसे कैसे कहना है।",
 
     exampleTopic: "2x + 3 = 11 हल करना",
     exampleStuck: "मुझे पता है कि x अज्ञात संख्या है, लेकिन मुझे घबराहट होती है कि पहला कदम क्या होना चाहिए।",
